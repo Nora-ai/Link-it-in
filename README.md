@@ -5,7 +5,14 @@
 Nora needs to find a job. Raul needs to find a job. Link-it-in is a job tracker where Nora and Raul can add links to jobs they are interested in and have them populate in an organized list so when they are ready to apply, the links are all in once place and there is room to add information about each application process.
 
 ## Wireframes
-
+![1](https://res.cloudinary.com/alienora/image/upload/v1629328554/Web_1920_1_badtos.png)
+![2](https://res.cloudinary.com/alienora/image/upload/v1629328574/Web_1920_2_vm41dw.png)
+![3](https://res.cloudinary.com/alienora/image/upload/v1629328574/Web_1920_6_xfglm9.png)
+![4](https://res.cloudinary.com/alienora/image/upload/v1629328574/Web_1920_4_swocfo.png)
+![5](https://res.cloudinary.com/alienora/image/upload/v1629328575/Web_1920_3_xjz1tj.png)
+![6](https://res.cloudinary.com/alienora/image/upload/v1629328574/Web_1920_5_ebasy2.png)
+![7](https://res.cloudinary.com/alienora/image/upload/v1629328575/Web_1920_7_cciubt.png)
+![8](https://res.cloudinary.com/alienora/image/upload/v1629328574/Web_1920_9_ubhcnr.png)
 
 
 ## Component Hierarchy
