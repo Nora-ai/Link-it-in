@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Nora needs to find a job. Raul needs to find a job. Link-it-in is a job tracker where Nora and Raul can add links to jobs they are interested in and have them populate in an organized list so when they are ready to apply, the links are all in once place and there is room to add information about each application process.
+Nora needs to find a job. Raul needs to find a job. Link-it-in is a job tracker where Nora and Raul can add links to jobs they find in between teaching computer science lessons. Once they are ready to apply, the list will help them move quickly. 
 
 ## Wireframes
 ![1](https://res.cloudinary.com/alienora/image/upload/v1629328554/Web_1920_1_badtos.png)
