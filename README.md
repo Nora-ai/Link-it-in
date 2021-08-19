@@ -16,7 +16,7 @@ Nora needs to find a job. Raul needs to find a job. Link-it-in is a job tracker 
 
 
 ## Component Hierarchy
- [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) ]
+![component hierarchy](https://res.cloudinary.com/alienora/image/upload/v1629383433/Screen_Shot_2021-08-19_at_9.30.16_AM_j0h8ks.png)
 
 ## API and Data Sample
 
