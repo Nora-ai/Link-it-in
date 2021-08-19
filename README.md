@@ -21,6 +21,63 @@ Nora needs to find a job. Raul needs to find a job. Link-it-in is a job tracker 
 ## API and Data Sample
 
 ```
+{
+    "records": [
+        {
+            "id": "rec8bHBAnbZiPO2W9",
+            "fields": {
+                "Created": "2021-08-19",
+                "owner": "Nora",
+                "company": "Digit",
+                "position": "Software Engineer",
+                "status": true,
+                "salary": "90K",
+                "link": "https://www.canva.com/"
+            },
+            "createdTime": "2021-08-19T14:40:52.000Z"
+        },
+        {
+            "id": "recEevSyDNvjv49pw",
+            "fields": {
+                "Created": "2021-08-19",
+                "owner": "Nora",
+                "company": "Pendo.io",
+                "position": "Solutions Enginner",
+                "status": true,
+                "salary": "80K",
+                "app_process": "Internal recruiter reached out to me",
+                "tech_assessment": "hackerank 2 hour timed",
+                "next_round": "panel interview",
+                "final": "rejected",
+                "notes": "Recruiter said I seemed more interested in a software engineering role",
+                "link": "https://www.canva.com/"
+            },
+            "createdTime": "2021-08-19T14:40:52.000Z"
+        },
+        {
+            "id": "recaGSulZcqNZpHK1",
+            "fields": {
+                "Created": "2021-08-19",
+                "owner": "Raul",
+                "link": "https://www.canva.com/",
+                "company": "Google",
+                "position": "Software Engineer"
+            },
+            "createdTime": "2021-08-19T14:40:52.000Z"
+        },
+        {
+            "id": "rectJFhWtp0ViNblc",
+            "fields": {
+                "Created": "2021-08-19",
+                "owner": "Raul",
+                "link": "https://www.canva.com/",
+                "company": "Tesla",
+                "position": "Software Engineer"
+            },
+            "createdTime": "2021-08-19T14:50:22.000Z"
+        }
+    ]
+}
 
 ```
 
