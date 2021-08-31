@@ -1,0 +1,22 @@
+.jobs-page-container {
+    
+}
+
+.jobs-title {
+
+}
+
+.jobs-list-container {
+    border: 1px solid blue;
+    margin: 5%;
+}
+
+.jobs-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.Jobs-list {
+    display: flex;
+    flex-direction: row;
+}

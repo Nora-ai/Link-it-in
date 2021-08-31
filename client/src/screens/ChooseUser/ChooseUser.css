@@ -1,0 +1,25 @@
+.choose-user-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content:flex-start;
+    padding-top: 15%;
+    align-items: center;
+    background-color: #3895D3;
+    width: 100vw;
+    height: 100vh;
+}
+
+.choose-user-title {
+    color: white;
+}
+
+.choose-user-nora,
+.choose-user-raul,
+.choose-user-none {
+    width: 200px;
+    height: 30px;
+    opacity: 0.5;
+    color: blue;
+    margin: 10px;
+}
+
