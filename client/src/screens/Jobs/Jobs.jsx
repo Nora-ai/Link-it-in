@@ -1,13 +1,11 @@
 import './Jobs.css'
-import { useHistory } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './Jobs.css'
 
 export default function Jobs (props) {
 
-    //const history = useHistory()
-
     const { jobs } = props
+    const { id } = useParams()
 
     return(
         <div className="jobs-page-container">
@@ -22,12 +20,17 @@ export default function Jobs (props) {
                 
                 <div className="jobs-list">
                 {jobs.map((job, index) => (
-                    <Link to={`/jobs/${job.id}`}><div>
-                    <p>{job.fields.owner}</p>
+                    <div className="jobs-row">
+                    <p>{job.fields.Created}</p>
+                        <p>{job.fields.owner}</p>
+                    <Link to={`/jobs/${job.id}`}>
                     <p>{job.fields.company}</p>
+                        </Link>
+                        <Link to={`/jobs/${job.id}`}>
                     <p>{job.fields.position}</p>
+                    </Link>
                     <p>{job.fields.status}</p>
-                    </div></Link>
+                    </div>
                 ))}
                 </div>
             

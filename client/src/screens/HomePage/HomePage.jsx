@@ -1,21 +1,17 @@
-import axios from 'axios'
-import { useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import { baseURL, config } from '../../services/apiConfig'
+// import axios from 'axios'
+// import { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+// import { baseURL, config } from '../../services/apiConfig'
 import './HomePage.css'
 
 export default function HomePage(props) {
-    const history = useHistory()
+    const navigate = useNavigate()
     const { link, setLink } = props
 
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        // const fields = {
-        //     link
-        // }
-        //await axios.post(baseURL, {fields}, config)
-        history.push('/choose-user')
+        navigate.push('/choose-user')
     }
 
 

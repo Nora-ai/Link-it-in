@@ -1,72 +1,91 @@
-import './App.css';
-import { Route, Switch } from 'react-router-dom'
-import { useState, useEffect } from "react"
-import { baseURL, config } from './services/apiConfig'
-import axios from 'axios'
-import Jobs from './screens/Jobs/Jobs'
-import Job from './screens/Job/Job'
-import HomePage from './screens/HomePage/HomePage'
-import ChooseUser from './screens/ChooseUser/ChooseUser';
-import FormStart from './screens/FormStart/FormStart'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { baseURL, config } from "./services/apiConfig";
+import axios from "axios";
+import Jobs from "./screens/Jobs/Jobs";
+import Job from "./screens/Job/Job";
+import JobEdit from "./screens/JobEdit/JobEdit";
+import HomePage from "./screens/HomePage/HomePage";
+import ChooseUser from "./screens/ChooseUser/ChooseUser";
+import FormStart from "./screens/FormStart/FormStart";
 
 function App() {
-  const [link, setLink] = useState("")
-  const [owner, setOwner] = useState("")
-  const [company, setCompany] = useState("")
-  const [position, setPosition] = useState("")
-  const [status, setStatus] = useState("")
-  const [salary, setSalary] = useState("")
-  const [appProcess, setAppProcess] = useState("")
-  const [techAss, setTechAss] = useState("")
-  const [nextRound, setNextRound] = useState("")
-  const [final, setFinal] = useState("")
-  const [notes, setNotes] = useState("")
+  const [link, setLink] = useState("");
+  const [owner, setOwner] = useState("");
+  const [company, setCompany] = useState("");
+  const [position, setPosition] = useState("");
+  const [status, setStatus] = useState("");
+  const [salary, setSalary] = useState("");
+  const [appProcess, setAppProcess] = useState("");
+  const [techAss, setTechAss] = useState("");
+  const [nextRound, setNextRound] = useState("");
+  const [final, setFinal] = useState("");
+  const [notes, setNotes] = useState("");
 
-  const [jobs, setJobs] = useState([])
-  const [toggle, setToggle] = useState(false)
-  
+  const [jobs, setJobs] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     const getJobs = async () => {
-      const response = await axios.get(baseURL, config)
+      const response = await axios.get(baseURL, config);
       // console.log(response.data.records)
-      setJobs(response.data.records)
-    }
-    getJobs()
-  }, [toggle])
+      setJobs(response.data.records);
+    };
+    getJobs();
+  }, [toggle]);
 
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage link={link} setLink={setLink}/>} />
+        <Route path="/choose-user"
+          element={<ChooseUser owner={owner} setOwner={setOwner} />}/>
+        <Route path="/company-info" element={
+          <FormStart
+            owner={owner}
+            link={link}
+            company={company}
+            setCompany={setCompany}
+            position={position}
+            setPosition={setPosition}
+            setToggle={setToggle}
+          />} />
+        <Route path="/jobs/:id" element={
+          <Job
+            jobs={jobs}
+            owner={owner}
+            link={link}
+            company={company}
+            position={position}
+            status={status}
+            salary={salary}
+            appProcess={appProcess}
+            techAss={techAss}
+            nextRound={nextRound}
+            final={final}
+            notes={notes}
+          />} />
+        <Route exact path="/jobs"
+          element ={<Jobs jobs={jobs} />} />
 
-  return (<>
-    <Switch>
-    <Route exact path='/'>
-      <HomePage link={link} setLink={setLink}/>
-    </Route>
-    <Route path='/choose-user'>
-      <ChooseUser owner={owner} setOwner={setOwner} />
-    </Route>
-    <Route path='/company-info'>
-        <FormStart owner={owner} link={link} company={company} 
-        setCompany={setCompany} position={position} setPosition={setPosition} 
-        setToggle={setToggle}/>
-    </Route>
-    
-    <Route path='/jobs/:id'>
-      <Job jobs={jobs} owner={owner} link={link} company={company} 
-      position={position} status={status} salary={salary}
-      appProcess={appProcess} techAss={techAss} nextRound={nextRound} 
-      final={final} notes={notes}/>
-    </Route>
-    <Route exact path='/jobs'>
-      <Jobs jobs={jobs} 
-       />
-    </Route>
-    
-    <Route path='/edit/:id'>
-
-    </Route>
-    </Switch>
-
-  </>);
+        <Route path="/jobs/:id/edit" element={
+          <JobEdit 
+          owner={owner} setOwner={setOwner}
+          link={link} setLink={setLink}
+          company={company} setCompany={setCompany}
+          position={position} setPosition={setPosition}
+          status={status} setStatus={setStatus}
+          salary={salary} setSalary={setSalary}
+          appProcess={appProcess} setAppProcess={setAppProcess}
+          techAss={techAss} setTechAss={setTechAss}
+          nextRound={nextRound} setNextRound={setNextRound}
+          final={final} setFinal={setFinal}
+          notes={notes} setNotes={setNotes}
+          />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

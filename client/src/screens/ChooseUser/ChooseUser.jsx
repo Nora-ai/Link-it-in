@@ -1,16 +1,16 @@
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './ChooseUser.css'
 
 export default function ChooseUser(props) {
 
-    const history = useHistory()
+    const navigate = useNavigate()
     const { owner, setOwner } = props
 
 
     const handleSubmit = async (e, name) => {
         e.preventDefault()
         setOwner(name) 
-        history.push('/company-info')
+        navigate.push('/company-info')
     }
 
 

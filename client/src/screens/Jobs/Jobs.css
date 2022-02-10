@@ -16,7 +16,13 @@
     flex-direction: row;
 }
 
-.Jobs-list {
+/* .Jobs-list {
     display: flex;
     flex-direction: row;
+} */
+
+.jobs-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

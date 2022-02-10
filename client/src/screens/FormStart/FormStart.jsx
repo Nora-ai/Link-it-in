@@ -1,11 +1,11 @@
 import axios from "axios"
 import { baseURL, config } from "../../services/apiConfig"
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './FormStart.css'
 
 
 export default function FormStart(props) {
-    const history = useHistory()
+    const navigate = useNavigate()
     const { owner, link, company, setCompany, position, setPosition, setToggle} = props
 
     const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ export default function FormStart(props) {
         }
         await axios.post(baseURL, {fields}, config)
         setToggle(prev => !prev)
-        history.push('/jobs')
+        navigate.push('/jobs')
     }
 
     return (
@@ -31,6 +31,7 @@ export default function FormStart(props) {
                     type="text"
                     placeholder="company name"
                     value={company}
+                    required
                     onChange={(e) => setCompany(e.target.value)}
                 />
 
@@ -39,10 +40,11 @@ export default function FormStart(props) {
                     type="text"
                     placeholder="position name"
                     value={position}
+                    required
                     onChange={(e) => setPosition(e.target.value)}
                  />
 
-                 <button className="form-start-button" type="submit"></button>
+                 <button className="form-start-button" type="submit">Link-it-in</button>
 
             </form>
             
