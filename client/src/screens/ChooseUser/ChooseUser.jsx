@@ -10,7 +10,7 @@ export default function ChooseUser(props) {
     const handleSubmit = async (e, name) => {
         e.preventDefault()
         setOwner(name) 
-        navigate.push('/company-info')
+        navigate('/company-info')
     }
 
 

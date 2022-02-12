@@ -18,7 +18,7 @@ export default function FormStart(props) {
         }
         await axios.post(baseURL, {fields}, config)
         setToggle(prev => !prev)
-        navigate.push('/jobs')
+        navigate('/jobs')
     }
 
     return (

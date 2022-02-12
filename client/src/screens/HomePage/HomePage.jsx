@@ -11,7 +11,7 @@ export default function HomePage(props) {
     
     const handleSubmit = async (e) => {
         e.preventDefault()
-        navigate.push('/choose-user')
+        navigate('/choose-user')
     }
 
 
