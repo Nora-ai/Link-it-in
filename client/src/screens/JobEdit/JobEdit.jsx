@@ -1,16 +1,29 @@
+import axios from 'axios'
+import { baseURL, config } from '../../services/apiConfig'
+import { useParams } from 'react-router-dom'
 
 export default function JobEdit(props) {
 
+    const params = useParams()
        
     const {company, setCompany, position, setPosition, salary, setSalary, 
         link, setLink, status, setStatus, appProcess, setAppProcess, 
         techAss, setTechAss, nextRound, setNextRound, 
-        final, setFinal, notes, setNotes } = props
-    // console.log(props.company)
+        final, setFinal, notes, setNotes, setJobs } = props
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const updateJobs = async (body, id) => {
+            const response = await axios.put(`${baseURL}/${params.id}`, { fields: body }, config)
+            setJobs(response.data.records)
+          }
+          updateJobs()
+    }
+
 
     return(<>
 
-        <form>
+        <form onSubmit={(e) => (handleSubmit)}>
             <label>
                 Company:
             <input 
@@ -100,7 +113,7 @@ export default function JobEdit(props) {
             />
             </label>
              
-
+            <button>Submit Changes</button>
         </form>
         
     

@@ -29,11 +29,18 @@ function App() {
   useEffect(() => {
     const getJobs = async () => {
       const response = await axios.get(baseURL, config);
-      // console.log(response.data.records)
       setJobs(response.data.records);
     };
     getJobs();
   }, [toggle]);
+
+  // useEffect(() => {
+  //   const updateJobs = async (body, id) => {
+  //     const response = await axios.put(baseURL, { fields: body }, config)
+  //     setJobs(response.data.records)
+  //   }
+  //   updateJobs()
+  // },)
 
   return (
     <>
@@ -71,6 +78,7 @@ function App() {
 
         <Route path="/jobs/:id/edit" element={
           <JobEdit 
+          jobs={jobs} setJobs={setJobs}
           owner={owner} setOwner={setOwner}
           link={link} setLink={setLink}
           company={company} setCompany={setCompany}
