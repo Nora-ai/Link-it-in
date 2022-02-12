@@ -1,29 +1,66 @@
 import axios from 'axios'
 import { baseURL, config } from '../../services/apiConfig'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 export default function JobEdit(props) {
 
-    const params = useParams()
+    const { id } = useParams()
+    const navigate = useNavigate()
+    const [oneJob, setOneJob] = useState({})
        
     const {company, setCompany, position, setPosition, salary, setSalary, 
         link, setLink, status, setStatus, appProcess, setAppProcess, 
         techAss, setTechAss, nextRound, setNextRound, 
-        final, setFinal, notes, setNotes, setJobs } = props
+        final, setFinal, notes, setNotes, owner } = props
     
+    
+    useEffect(() => {
+        const getOneJob = async () => {
+            const response = await axios.get(`${baseURL}/${id}`, config)
+            setOneJob(response.data.fields)
+            setCompany(response.data.fields.company)
+            setPosition(response.data.fields.position)
+            setLink(response.data.fields.link)
+            setSalary(response.data.fields.salary || "")
+            setStatus(response.data.fields.status || "")
+            setAppProcess(response.data.fields.appProcess || "")
+            setTechAss(response.data.fields.techAss || "")
+            setNextRound(response.data.fields.nextRound || "")
+            setNotes(response.data.fields.notes || "")
+            setFinal(response.data.fields.final || "")
+        }
+        getOneJob()
+    }, [id])
+        
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        const updateJobs = async (body, id) => {
-            const response = await axios.put(`${baseURL}/${params.id}`, { fields: body }, config)
-            setJobs(response.data.records)
-          }
-          updateJobs()
+        const fields = {
+            company,
+            position,
+            link,
+            salary,
+            status,
+            appProcess,
+            techAss,
+            nextRound,
+            notes,
+            final,
+            owner
+        }
+
+        const updateJobs = async () => {
+            const response = await axios.put(`${baseURL}/${id}`, { fields }, config)
+            navigate(`/jobs/${id}`)
+        }
+        updateJobs()
     }
 
 
     return(<>
 
-        <form onSubmit={(e) => (handleSubmit)}>
+        <form onSubmit={handleSubmit}>
             <label>
                 Company:
             <input 

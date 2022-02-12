@@ -1,16 +1,22 @@
 import { Link, useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import { baseURL, config} from '../../services/apiConfig'
 
 export default function Job (props) {
-    const params = useParams()
+    const [oneJob, setOneJob] = useState({})
+    const { id } = useParams()
 
-    const { jobs } = props
+    useEffect(() => {
+        const getOneJob = async () => {
+            const response = await axios.get(`${baseURL}/${id}`, config)
+            setOneJob(response.data.fields)
+        }
+        getOneJob()
+    }, [id])
 
-    const showInfo = jobs.find((job) => params.id === job.id)
-    console.log(showInfo) 
-    console.log(jobs)
 
-
-    const { link, company, position, salary, status, techAss, appProcess, nextRound, final, notes } = showInfo.fields
+    const { link, company, position, salary, status, techAss, appProcess, nextRound, final, notes } = oneJob
 
     console.log(company)
 
@@ -29,7 +35,7 @@ export default function Job (props) {
             <p>Final: {final}</p>
             <p>Notes: {notes}</p>
         </div>
-       <Link to={`/jobs/${params.id}/edit`}><button>Edit</button></Link>
+       <Link to={`/jobs/${id}/edit`}><button>Edit</button></Link>
 
     </>)
 }

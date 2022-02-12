@@ -73,7 +73,7 @@ function App() {
             final={final}
             notes={notes}
           />} />
-        <Route exact path="/jobs"
+        <Route path="/jobs"
           element ={<Jobs jobs={jobs} />} />
 
         <Route path="/jobs/:id/edit" element={
