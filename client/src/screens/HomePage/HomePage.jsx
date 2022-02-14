@@ -18,7 +18,11 @@ export default function HomePage(props) {
     return (
         <div className="homepage-container">
             <h2 className="homepage-logo">Link-it-in</h2>
-
+            <div className="bubble">
+                <p className="bubble-text">Found a job you like? Not ready to apply? Save it here, apply later.</p>
+            </div>
+            <div className="bubble2"></div>
+            <div className="bubble3"></div>
             <form onSubmit={handleSubmit} className="homepage-form">
                 <input
                     className="homepage-input"

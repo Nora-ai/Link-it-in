@@ -16,6 +16,76 @@
     outline: blue;
 }
 
+.bubble {
+    color: white;
+    font-size: 6px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50px;
+    position: absolute;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), inset 0px 10px 20px 5px rgba(255, 255, 255, 1);
+    animation: animateBubble 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	right: 5%;
+	top: 5%;
+}
+
+.bubble-text {
+    padding: 17%;
+    text-align: center;
+}
+
+@keyframes animateBubble {
+    0% {
+        margin-top: 50px;
+    }
+    100% {
+        margin-top: 10px;
+    }
+}
+
+@keyframes sideWays { 
+    0% { 
+        margin-left:0px;
+    }
+    100% { 
+        margin-left:50px;
+    }
+}
+
+.bubble2 {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    position: absolute;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), inset 0px 5px 10px 5px rgba(255, 255, 255, 1);
+	animation: animateBubble 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	right: 16%;
+	top: 17%;
+}
+
+// .homepage-logo:hover + .bubble2 {
+//     display:contents;
+//     height: 20px;
+//     width: 20px;
+//     border-radius: 10px;
+//     position: absolute;
+//     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), inset 0px 5px 10px 5px rgba(255, 255, 255, 1);
+// 	animation: animateBubble 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+// 	right: 16%;
+// 	top: 17%;
+// }
+
+.bubble3 {
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), inset 0px 1px 3px 3px rgba(255, 255, 255, 1);
+    animation: animateBubble 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
+	right: 20%;
+	top: 21%;
+}
+
 .homepage-form {
     width: 50%;
 }
@@ -27,7 +97,6 @@
     border: none;
     font-size: 12px;
     /* padding-left: 20px; */
-
 }
 
 ::placeholder {
