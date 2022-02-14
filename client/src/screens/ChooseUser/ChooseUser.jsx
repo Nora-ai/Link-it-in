@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import './ChooseUser.css'
+import './ChooseUser.scss'
 
 export default function ChooseUser(props) {
 
@@ -20,7 +20,7 @@ export default function ChooseUser(props) {
 
             <button className="choose-user-nora" onClick={(e) => handleSubmit(e, "Nora")}>Nora</button>
             <button className="choose-user-raul" onClick={(e) => handleSubmit(e, "Raul")}>Raul</button>
-            <button className="choose-user-none">Not Nora or Raul</button>
+            {/* <button className="choose-user-new">New User</button> */}
         
         </div>
 
