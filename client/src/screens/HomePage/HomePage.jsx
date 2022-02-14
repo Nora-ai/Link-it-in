@@ -2,7 +2,7 @@
 // import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 // import { baseURL, config } from '../../services/apiConfig'
-import './HomePage.css'
+import './HomePage.scss'
 
 export default function HomePage(props) {
     const navigate = useNavigate()
@@ -19,7 +19,7 @@ export default function HomePage(props) {
         <div className="homepage-container">
             <h2 className="homepage-logo">Link-it-in</h2>
 
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} className="homepage-form">
                 <input
                     className="homepage-input"
                     type="text"
@@ -28,7 +28,7 @@ export default function HomePage(props) {
                     onChange={(e) => setLink(e.target.value)}
                 />
             </form>
-            <Link to="/jobs"><p className="homepage-link">Actually, I am ready to apply for jobs</p></Link>
+            <Link to="/jobs" className="homepage-link"><p>Actually, I am ready to apply for jobs!</p></Link>
 
 
         </div>
