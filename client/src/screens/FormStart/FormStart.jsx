@@ -1,7 +1,7 @@
 import axios from "axios"
 import { baseURL, config } from "../../services/apiConfig"
 import { useNavigate } from 'react-router-dom'
-import './FormStart.css'
+import './FormStart.scss'
 
 
 export default function FormStart(props) {
@@ -23,9 +23,9 @@ export default function FormStart(props) {
 
     return (
         <div className="form-start-container">
-            <h3 className="form-start-title">Type in info</h3>
+            <h3 className="form-start-title">Let's get some more information</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-start-form">
                 <input 
                     className="form-start-input"
                     type="text"

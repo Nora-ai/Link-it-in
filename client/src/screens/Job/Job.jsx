@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { baseURL, config} from '../../services/apiConfig'
+import './Job.css'
 
 export default function Job (props) {
     const [oneJob, setOneJob] = useState({})
@@ -22,18 +23,22 @@ export default function Job (props) {
 
 
     return (<>
-        <div>
-            <p>Company: {company}</p>
-            <p>Position: {position}</p>
-            <p>Salary: {salary}</p>
+        <div className="job-container">
+            <div className="job-inner-container-left">
+            <p className="job-company">{company}</p>
+            <p className="job-position">{position}</p>
+            <p className="job-salary">Salary: {salary}</p>
             <p>Link to Job: {link}</p>
             <p>Date Added:</p>
             <p>Applied: {status}</p>
-            <p>Application: {appProcess}</p>
+            </div>
+            <div className="job-inner-container-right">
+            <p>Application Process: {appProcess}</p>
             <p>Tech Assessment: {techAss}</p>
             <p>Next Round: {nextRound}</p>
             <p>Final: {final}</p>
             <p>Notes: {notes}</p>
+            </div>
         </div>
        <Link to={`/jobs/${id}/edit`}><button>Edit</button></Link>
 

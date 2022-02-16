@@ -1,0 +1,31 @@
+.job-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border: 1px solid blue;
+    margin: 5%;
+    padding: 5%;
+    font-size: 12px;
+}
+
+.job-inner-container-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.job-inner-container-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.job-company {
+    font-size: 20px;
+    font-weight:500;
+}
+
+.job-position {
+    font-size: 16px;
+    font-weight: 400;
+}

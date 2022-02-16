@@ -11,25 +11,27 @@ export default function Jobs (props) {
             <h3 className="jobs-title">Would you like to apply to some jobs today?</h3>
             <div className="jobs-list-container">
                 <div className="jobs-header">
-                <p>Date Added</p>
-                <p>Company</p>
-                <p>Postion</p>
-                <p>Status</p>
+                    <p>Date Added</p>
+                    <select className="owner-tag">
+                        <option>Nora</option>
+                        <option>Raul</option>
+                    </select>
+                    <p>Company</p>
+                    <p>Position</p>
+                    <p>Status</p>
                 </div>
                 
                 <div className="jobs-list">
                 {jobs.map((job, index) => (
+                        <Link to={`/jobs/${job.id}`} className="link-to-job">
                     <div className="jobs-row">
-                    <p>{job.fields.Created}</p>
+                        <p>{job.fields.Created}</p>
                         <p>{job.fields.owner}</p>
-                    <Link to={`/jobs/${job.id}`}>
-                    <p>{job.fields.company}</p>
-                        </Link>
-                        <Link to={`/jobs/${job.id}`}>
-                    <p>{job.fields.position}</p>
-                    </Link>
-                    <p>{job.fields.status}</p>
+                        <p>{job.fields.company}</p>
+                        <p>{job.fields.position}</p>
+                        <p>{job.fields.status}</p>
                     </div>
+                        </Link>
                 ))}
                 </div>
             
