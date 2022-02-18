@@ -63,17 +63,6 @@
 	top: 17%;
 }
 
-// .homepage-logo:hover + .bubble2 {
-//     display:contents;
-//     height: 20px;
-//     width: 20px;
-//     border-radius: 10px;
-//     position: absolute;
-//     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1), inset 0px 5px 10px 5px rgba(255, 255, 255, 1);
-// 	animation: animateBubble 10s linear infinite, sideWays 5s ease-in-out infinite alternate;
-// 	right: 16%;
-// 	top: 17%;
-// }
 
 .bubble3 {
     height: 10px;
@@ -112,9 +101,6 @@
     margin-top: 10px;
 }
 
-// .homepage-link:hover {
-//     color: magenta;
-// }
 
 .homepage-link {
 	position: relative;
@@ -135,9 +121,3 @@
 		transform: scaleX(1);
 	}
 }
-
-/* @media screen and (min-width:500px) {
-    .homepage-form {
-        width: 50%;
-    }
-} */

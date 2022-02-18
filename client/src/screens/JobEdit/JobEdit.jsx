@@ -2,6 +2,7 @@ import axios from 'axios'
 import { baseURL, config } from '../../services/apiConfig'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import './JobEdit.css'
 
 export default function JobEdit(props) {
 
@@ -58,9 +59,10 @@ export default function JobEdit(props) {
     }
 
 
-    return(<>
+    return(<div className="job-edit-container">
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="job-edit-form">
+            <div className="job-edit-grid-left">
             <label>
                 Company:
             <input 
@@ -109,6 +111,8 @@ export default function JobEdit(props) {
                 onChange={(e) => setStatus(e.target.value)}
             />
             </label>
+            </div>
+            <div className="job-edit-grid-right">
             <label>
                 Application Process:
             <input 
@@ -151,10 +155,8 @@ export default function JobEdit(props) {
             </label>
              
             <button>Submit Changes</button>
+            </div>
         </form>
         
-    
-    
-    
-    </>)
+        </div>)
 }

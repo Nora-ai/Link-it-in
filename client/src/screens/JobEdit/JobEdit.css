@@ -1,0 +1,26 @@
+.job-edit-container {
+    
+}
+
+.job-edit-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: white;
+    border:1px solid rgb(34,193,195);
+    margin: 5%;
+    padding: 5%;
+    font-size: 12px;
+}
+
+.job-edit-grid-left {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.job-edit-grid-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+}

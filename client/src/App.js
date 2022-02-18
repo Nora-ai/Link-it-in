@@ -34,13 +34,6 @@ function App() {
     getJobs();
   }, [toggle]);
 
-  // useEffect(() => {
-  //   const updateJobs = async (body, id) => {
-  //     const response = await axios.put(baseURL, { fields: body }, config)
-  //     setJobs(response.data.records)
-  //   }
-  //   updateJobs()
-  // },)
 
   return (
     <>

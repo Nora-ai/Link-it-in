@@ -29,26 +29,27 @@ export default function Job (props) {
     }
  
 
-    return (<>
-        <div className="job-container">
-            <div className="job-inner-container-left">
-            <p className="job-company">{company}</p>
-            <p className="job-position">{position}</p>
-            <p className="job-salary">Salary: {salary}</p>
-            <p>Link to Job: {link}</p>
-            <p>Date Added:</p>
-            <p>Applied: {status}</p>
-            </div>
-            <div className="job-inner-container-right">
-            <p>Application Process: {appProcess}</p>
-            <p>Tech Assessment: {techAss}</p>
-            <p>Next Round: {nextRound}</p>
-            <p>Final: {final}</p>
-            <p>Notes: {notes}</p>
-            <Link to={`/jobs/${id}/edit`}><button>Edit</button></Link>
-            <button onClick={handleDelete}>Delete</button>
+    return (
+        <div className="job-page-container">
+            <div className="job-container">
+                <div className="job-inner-container-left">
+                    <p className="job-company">{company}</p>
+                    <p className="job-position">{position}</p>
+                    <p className="job-salary">SALARY: {salary}</p>
+                    <p>LINK TO JOB: {link}</p>
+                    <p>DATE ADDED:</p>
+                    <p>APPLIED: {status}</p>
+                </div>
+                <div className="job-inner-container-right">
+                    <p>APPLICATION PROCESS: {appProcess}</p>
+                    <p>TECH ASSESSMENT: {techAss}</p>
+                    <p>NEXT ROUND: {nextRound}</p>
+                    <p>FINAL: {final}</p>
+                    <p>NOTES: {notes}</p>
+                    <Link to={`/jobs/${id}/edit`}><button className="job-edit">Edit</button></Link>
+                    <button className="job-delete"onClick={handleDelete}>Delete</button>
+                </div>
             </div>
         </div>
-
-    </>)
+    )
 }

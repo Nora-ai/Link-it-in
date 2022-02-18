@@ -1,6 +1,8 @@
 .jobs-page-container {
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     padding-top: 20px;
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(48,139,213,1) 64%, rgba(45,83,253,1) 100%);
@@ -15,7 +17,6 @@
 
 .jobs-list-container {
     background-color: white;
-    border: 1px solid rgba(48,139,213,1);
     margin: 5%;
     padding: 5%;
     font-size: 12px;
@@ -52,4 +53,15 @@
     grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
     background-color: #f5f5f5;
     margin-bottom: 10px
+}
+
+
+.back-to-homepage {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
 }

@@ -1,6 +1,5 @@
-import './Jobs.css'
 import { Link } from 'react-router-dom'
-import './Jobs.css'
+import './Jobs.scss'
 
 export default function Jobs (props) {
 
@@ -36,6 +35,8 @@ export default function Jobs (props) {
                 </div>
             
             </div>
+
+            <Link to="/" className="back-to-homepage"><p>Add New Job</p></Link>
 
 
         </div> 

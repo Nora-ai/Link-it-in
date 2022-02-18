@@ -1,8 +1,17 @@
+
+/* .job-page-container {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(48,139,213,1) 64%, rgba(45,83,253,1) 100%);
+    width: 100vw;
+    height: 100vh;
+} */
+
 .job-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    border: 1px solid blue;
+    background-color: white;
+    border:1px solid rgb(34,193,195);
     margin: 5%;
     padding: 5%;
     font-size: 12px;
@@ -28,4 +37,13 @@
 .job-position {
     font-size: 16px;
     font-weight: 400;
+}
+
+.job-edit, 
+.job-delete {
+    background-color: rgb(34,193,195);;
+    border: none;
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
 }

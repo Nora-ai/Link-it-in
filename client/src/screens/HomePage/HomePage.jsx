@@ -1,7 +1,4 @@
-// import axios from 'axios'
-// import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-// import { baseURL, config } from '../../services/apiConfig'
 import './HomePage.scss'
 
 export default function HomePage(props) {
